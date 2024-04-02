@@ -166,7 +166,11 @@ const changefunctions = async (_id) => {
 const handleRefreshClick = () => {
     window.location.reload();
   };
+  const [selectedImage, setSelectedImage] = useState(null);
 
+  const handleImageClick = (index) => {
+      setSelectedImage(formData.Images[index]);
+  };
 const Logout =()=>{
     
     localStorage.removeItem('token');
@@ -283,20 +287,21 @@ const Login =()=>{
                 <div className={styles.desc}><b> {formData.product_description}</b></div>
                 <div className={styles.images}>
                     <div className={styles.left}>
-                        <div className={styles.imagesContainer}>
-                            <img src={formData.Images[0]} className={styles.headphone} />
-                        </div>
-                        <div className={styles.imagesBox}>
-                            <div className={styles.imgborder}>
-                                <img src={formData.Images[1]} className={styles.headphone} />
-                            </div>
-                            <div className={styles.imgborder}>
-                                <img src={formData.Images[2]} className={styles.headphone} />
-                            </div>
-                            <div className={styles.imgborder}>
-                                <img src={formData.Images[3]} className={styles.headphone} />
-                            </div>
-                        </div>
+                    <div className={styles.imagesContainer}>
+                <img src={selectedImage || formData.Images[0]} className={styles.headphone} />
+            </div>
+            <div className={styles.imagesBox}>
+                {formData.Images.slice(1).map((image, index) => (
+                    <div className={styles.imgborder} key={index}>
+                        <img
+                            src={image}
+                            className={styles.headphone}
+                            onClick={() => handleImageClick(index + 1)} // Adjust index since we are slicing
+                        />
+                    </div>
+                ))}
+            </div>
+
                     </div>
                     <div className={styles.right}>
                         <div className={styles.info}>
