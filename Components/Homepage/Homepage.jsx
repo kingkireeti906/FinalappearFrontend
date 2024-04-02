@@ -306,6 +306,9 @@ function HomePage() {
         }
        
     }
+    const cartnavigation =()=>{
+        navigate('//MyCart')
+    }
     return (
        <div>
         {isMobile?( <div className={styles.mobContainer}>
@@ -588,7 +591,7 @@ function HomePage() {
                          <div className={styles.home}>Home   <span onClick={invoicenavigate}>Invoice</span></div></div>
                      <div className={styles.loggedin}>
                          {showCart && (
-                             <div className={styles.viewCart}>
+                             <div className={styles.viewCart}onClick={cartnavigation}>
                                  <img src={carticon} alt='cartIcon' className={styles.cartIcon} />
                                  <span className={styles.viewCartText}>View Cart {count}</span>
                              </div>

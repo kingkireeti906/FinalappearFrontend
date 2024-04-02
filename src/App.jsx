@@ -13,7 +13,7 @@ import MyInVoice from "../Components/Myinvoice/Myinvoice"
 function App() {
   return (
    <>
-     <BrowserRouter>
+     <BrowserRouter basename="/FinalFrontend">
         <Routes>
         <Route path="/" element={<HomePage/> } />
         <Route path="/register" element={<Register />} />

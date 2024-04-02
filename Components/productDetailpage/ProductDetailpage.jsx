@@ -96,6 +96,9 @@ function ProductDetailsPage() {
 const BacktoProducts=()=>{
     navigate('/');
 }
+const cartnavigation =()=>{
+    navigate('//MyCart')
+}
 
 const fetchData = async () => {
     try {
@@ -262,7 +265,7 @@ const Login =()=>{
                     </div>
                     <div className={styles.home}>Home/{formData.ProductName}</div>
                     {status && (
-                    <div className={styles.viewCart}>
+                    <div className={styles.viewCart}onClick={cartnavigation}>
                         <img src={cartIcon} alt='cartIcon' className={styles.cartIcon} />
                         <span className={styles.viewCartText}>View Cart {cartcount}</span>
                     </div>

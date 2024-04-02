@@ -52,6 +52,9 @@ function MyInVoice() {
    const Login =()=>{
     navigate('/login')
 }
+const cartnavigation =()=>{
+    navigate('//MyCart')
+}
     return (
         <div>
             {isMobile ? (
@@ -137,7 +140,7 @@ function MyInVoice() {
                                 <span className={styles.musicartt}>Musicart</span>
                             </div>
                             <div className={styles.home}>Home/My Invoices</div>
-                            <div className={styles.viewCart}>
+                            <div className={styles.viewCart}onClick={cartnavigation}>
                                 <img src={cartIcon} alt='cartIcon' className={styles.cartIcon} />
                                 <span className={styles.viewCartText}>View Cart</span>
                             </div>
