@@ -1,5 +1,5 @@
 import axios from 'axios';
-const backendUrl = `http://localhost:3000`;
+const backendUrl = `https://finalappearbackend.onrender.com`;
 
 export const getdata = async(headphone_type,company,color,price,sort,Productsearch)=>{
   const reqUrl = `${backendUrl}/api/v1/product/getdata?headphone_type=${headphone_type}&company=${company}&color=${color}&price=${price}&sort=${sort}&Productsearch=${Productsearch}`
