@@ -577,6 +577,7 @@ input:focus {
     padding: 0.5rem;
     box-sizing: border-box;
     margin:0%;
+  
 }
  
 .hr{
@@ -591,6 +592,14 @@ input:focus {
 }
 .logout{
     color: white;
+}
+.logouts{
+    font-family: "Roboto", sans-serif;
+    color:black;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+
 }
 @media screen and (max-width: 768px) {
     .mobContainer {

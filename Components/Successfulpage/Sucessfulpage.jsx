@@ -33,6 +33,9 @@ function SuccessPage() {
     const invoicefun = ()=>{
         navigate('/MyInVoice')
     }
+    const navigatedtocart =()=>{
+        navigate('/MyCart')
+    }
     return (
         <div className={styles.container}>
             <div className={styles.music}>
@@ -64,7 +67,7 @@ function SuccessPage() {
                                 <img src={home} alt='img' className={styles.homeImg} />
                                 <span className={styles.hometext}>Home</span>
                             </div>
-                            <div className={styles.footerImgs}>
+                            <div className={styles.footerImgs}onclick={navigatedtocart}>
                                 <span className={styles.cartCount}>0</span>
                                 <img src={cartImg} alt='img' className={styles.homeImg} />
                                 <span className={styles.hometext}>Cart</span>

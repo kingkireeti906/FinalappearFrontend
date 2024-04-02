@@ -138,6 +138,12 @@ function Checkout() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    const naviagtion = ()=>{
+        navigate('/Mycart')
+    }
+    const Logging =()=>{
+        navigate('/login')
+    }
     return (
         <div>
             {isMobile ? (<div className={styles.mobContainer}>
@@ -279,11 +285,11 @@ function Checkout() {
                         <div className={styles.footerImgs}>
                             <span className={styles.cartCount}>0</span>
                             <img src={cartImg} alt='img' className={styles.homeImg} />
-                            <span className={styles.hometext}>Cart</span>
+                            <span className={styles.hometext}onClick={naviagtion}>Cart</span>
                         </div>
                         <div className={styles.footerImgs}>
                             <img src={logout} alt='img' className={styles.homeImg} />
-                            <span className={styles.hometext}>Logout</span>
+                            <span className={styles.hometext}onClick={Logging}>Logout</span>
                         </div>
                     </div>
                 </div>

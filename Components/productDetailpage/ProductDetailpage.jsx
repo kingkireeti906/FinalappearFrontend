@@ -97,7 +97,10 @@ const BacktoProducts=()=>{
     navigate('/');
 }
 const cartnavigation =()=>{
-    navigate('//MyCart')
+    if (status){
+        navigate('/MyCart')
+    }
+   
 }
 
 const fetchData = async () => {
@@ -140,7 +143,10 @@ const changefunction = async (_id) => {
     console.log(response2);
     console.log(response);
     fetchData();
-    navigate('/MyCart')
+    if (status){
+        navigate('/MyCart')
+    }
+
 };
 const changefunctions = async (_id) => {
     if(!status){
@@ -226,7 +232,7 @@ const Login =()=>{
                     <div className={styles.footerImgs}>
                     <span className={styles.cartCount}>{cartcount}</span>   
                     <img src={cartImg} alt='img'className={styles.homeImg}/>
-                    <span className={styles.hometext}>Cart</span>
+                    <span className={styles.hometext }onClick={changefunction}>Cart</span>
                     </div>
                     {status?(<div className={styles.footerImgs}onClick={Logout}>
                                 <img src={logout} alt='img' className={styles.homeImg} />
@@ -265,9 +271,9 @@ const Login =()=>{
                     </div>
                     <div className={styles.home}>Home/{formData.ProductName}</div>
                     {status && (
-                    <div className={styles.viewCart}onClick={cartnavigation}>
-                        <img src={cartIcon} alt='cartIcon' className={styles.cartIcon} />
-                        <span className={styles.viewCartText}>View Cart {cartcount}</span>
+                    <div className={styles.viewCart}>
+                        <img src={cartIcon} alt='cartIcon' className={styles.cartIcon}onClick={cartnavigation} />
+                        <span className={styles.viewCartText}onClick={cartnavigation}>View Cart {cartcount} </span>
                     </div>
                 )}
                 </div>

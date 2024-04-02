@@ -147,6 +147,7 @@ function HomePage() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
+        const name = localStorage.getItem('username');
         if (token) {
             setShowCart(true);
         }
@@ -607,10 +608,10 @@ function HomePage() {
                              {profile && (
                                  <div className={styles.profileDetails}>
                                      <div className={styles.usernameBox}>
-                                         <span className={styles.userName}>anya</span></div>
+                                         <span className={styles.userName}>{name}</span></div>
                                      <div className={styles.hr} />
                                      <div className={styles.LogoutBox}>
-                                         <span className={styles.logout}>Logout</span>
+                                         <span className={styles.logouts} onClick={logoutfun}>Logout</span>
                                      </div>
                                  </div>
                              )}

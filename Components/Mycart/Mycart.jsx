@@ -87,6 +87,14 @@ function MyCart() {
     const Login =()=>{
         navigate('/login')
     }
+    const carting =()=>{
+        navigate('/ProductDetails')
+    }
+    const Loggedout =()=>{
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        navigate('/')
+    }
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     useEffect(() => {
         const handleResize = () => {
@@ -159,7 +167,7 @@ function MyCart() {
                     </div>
                     <div className={styles.footerImgs}>
                         <img src={logout} alt='img' className={styles.homeImg} />
-                        <span className={styles.hometext}>Logout</span>
+                        <span className={styles.hometext}onClick={Loggedout}>Logout</span>
                     </div>
                 </div>
             </div>
