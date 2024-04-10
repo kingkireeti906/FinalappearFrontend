@@ -101,17 +101,17 @@ const cartnavigation =()=>{
                     <div className={styles.footerBox}>
                         <hr />
                         <div className={styles.footerMob}>
-                            <div className={styles.footerImgs}>
+                            <div className={styles.footerImgs}onClick={navigationpage}>
                                 <img src={home} alt='img' className={styles.homeImg} />
                                 <span className={styles.hometext}>Home</span>
                             </div>
-                            <div className={styles.footerImgs}>
+                            <div className={styles.footerImgs}onClick={cartnavigation}>
                                 <img src={cartImg} alt='img' className={styles.homeImg} />
                                 <span className={styles.hometext}>Cart</span>
                             </div>
-                            <div className={styles.footerImgs}>
+                            <div className={styles.footerImgs}onClick={Login}>
                                 <img src={logout} alt='img' className={styles.homeImg} />
-                                <span className={styles.hometext}onClick={Login}>Logout</span>
+                                <span className={styles.hometext}>Logout</span>
                             </div>
                         </div>
                     </div>
